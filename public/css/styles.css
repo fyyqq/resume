@@ -1,0 +1,168 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Roboto', sans-serif ;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar .navbar-brand .mb-0 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.navbar-collapse .navbar-nav 
+.nav-item .nav-link {
+    font-size: 15px;
+}
+
+.navbar-collapse .navbar-nav 
+.nav-item .nav-link #user {
+    font-size: 30px;
+}
+
+#home {
+    height: 580px;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.411), rgba(0, 0, 0, 0.61)),
+    url('/imgs/vector.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+#home .row .text-center {
+    text-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+
+#home .row .p {
+    color: #ccc;
+    font-size: 14px;
+    padding: 0 300px;
+}
+
+.project {
+    height: 1000px;
+    width: 100%;
+}
+
+.project .row .column .card {
+    position: relative;
+}
+
+.project .row .column .card .sideBtn {
+    height: 100%;
+}
+
+.project .row .column .card .sideBtn .box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(77, 77, 77);
+    width: 30px;
+    height: 20%;
+    border-top-right-radius: 5px;
+    border: none;
+    display: grid;
+    place-items: center;
+}
+
+.project .row .column .card .sideBtn .box-detail {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 80%;
+    border: none;
+    border-bottom-right-radius: 5px;
+}
+
+.project .row .column .card 
+.sideBtn .box-detail .text {
+    transform: rotate(90deg) translate(20px, 12px);
+    font-size: 14.5px;
+    letter-spacing: 1px;
+    position: absolute;
+    bottom: 50%;
+    color: white;
+}
+
+.project .row .column .card .box .text-light {
+    font-size: 15px;
+}
+
+.project .row .column .card 
+.row .text .card-body .card-text {
+    font-size: 14px;
+    color: #555;
+}
+
+.project .float-popup {
+    position: fixed;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    transition: box-shadow .5s;
+}
+
+.project .float-popup:hover {
+    box-shadow: unset;
+}
+
+#adding .btn #backBtn {
+    font-size: 25px;
+    color: royalblue;
+}
+
+.project .row .column .card 
+.row .text .card-body .card-text #readmore {
+    text-decoration: none;
+    font-size: 13.5px;
+}
+
+.project .row .column .card 
+.row .text .card-body .card-text #readmore:hover {
+    text-decoration: underline;
+}
+
+.project .row .column .card 
+.row .text .card-body .profileTxt {
+    display: -webkit-box;
+    max-width: 450px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project .search-container {
+    position: relative;
+    height: 38px;
+    width: 350px;
+}
+
+.project .search-container .search {
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    font-size: 14.5px;
+}
+
+.project .search-container .search::placeholder {
+    font-size: 13.5px;
+    color: #aaa;
+}
+
+.project .search-container .fa-magnifying-glass {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0 10px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+}

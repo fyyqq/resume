@@ -1,0 +1,94 @@
+
+<div class="container-sm mt-5">
+    <a href="/project" class="btn btn-dark mb-4 px-3">
+        <i class="fa-solid fa-angle-left"></i>
+    </a>
+</div>
+
+
+<div class="container-sm py-3 mt-3" style="height: max-content; width: 700px; box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
+    <!-- PROFILE HEADER -->
+    <header class="profile-container d-flex border">
+        <div class="col-4 text-center py-3">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" class="img-fluid rounded-circle w-50 border border-1 border-dark">
+        </div>
+        <div class="col-8 mt-4">
+            <div class="card-body mt-1 ms-2">
+                <!-- nickname -->
+                <h3 class="card-title mb-1 text-dark name-card"><%= read.name %></h3>
+                <!-- jobs -->
+                <small class="text-muted"><%= read.job %></small>
+                <!-- email -->
+                <br>
+                <small class="text-muted"><%= read.email %></small>
+            </div>
+        </div>
+    </header>
+    <!-- PROFILE CONTENT -->
+    <section class="container mt-3 border pt-3 ps-4">
+        <div class="mb-4">
+            <h4 class="text-dark">Profile</h4>
+            <p class="text-secondary"><%= read.profile %></p>
+        </div>
+        <div class="mb-4">
+            <h4 class="text-dark">Education</h4>
+            <ul>
+                <li class="text-muted"><%= read.education %></li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <h4 class="text-dark">Skill</h4>
+            <ul>
+                <li class="text-muted"><%= read.skill %></li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <h4 class="text-dark">Work Experience</h4>
+            <ul>
+                <li class="text-muted"><%= read.workExp %> Years in <%= read.job %> </li>
+            </ul>
+        </div>
+    </section>
+    <footer class="container p-3 border mt-3">
+        <p class="text-center h4">Contacts</p>
+        <div class="row mt-4 d-flex justify-content-between">
+            <div class="col-6 text-center">
+                <div class="contactList1">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <small class="text-muted"><%= read.area %></small><br>
+                </div>
+                <div class="contactList1">
+                    <i class="fa-solid fa-phone"></i>
+                    <small class="text-muted"><%= read.number %></small><br>
+                </div>
+                <div class="contactList1">
+                    <i class="fa-solid fa-envelope"></i>
+                    <small class="text-muted"><%= read.email %></small>
+                </div>
+            </div>
+            <div class="col-6 text-center">
+                <div class="social1">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <small class="text-muted">linkedin.com/<%= read.name %></small>
+                </div>
+                <div class="social2">
+                    <i class="fa-brands fa-facebook"></i>
+                    <small class="text-muted">facebook.com/<%= read.name %></small>
+                </div>
+                <div class="social3">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <small class="text-muted">0<%= read.number %></small>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<div class="container py-5">
+    <div class="d-flex justify-content-center">
+        <form method="post" action="/project?_method=DELETE" class="box d-flex me-5">
+            <input type="hidden" name="name" value="<%= read.name %>">
+            <button class="box border border-2 border-danger btn btn-outline-danger justify-content-center px-5" style="cursor: pointer;">DELETE</button>
+        </form>
+        <a href="/update/<%= read.name %>" class="btn btn-success px-4">EDIT & UPDATE</a>
+    </div>
+</div>

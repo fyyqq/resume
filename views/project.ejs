@@ -1,0 +1,85 @@
+
+<div class="container-sm mt-5 project">
+    <!-- <div class="mb-5 d-flex justify-content-between align-items-center w-100"> -->
+        <div class="mb-5 d-flex">
+            <h1 class="display4 text-muted">CRUD DATABASE</h1>
+        </div>
+        <!-- </div> -->
+        <div class="w-100 mb-3 d-flex justify-content-md-end justify-content-center">
+        <form class="search-container">
+            <input type="text" name="search" class="search px-3 form-control text-muted" id="search" placeholder="Search Names...">
+            <i class="fa-solid fa-magnifying-glass text-muted"></i>
+        </form>
+    </div>
+    <% if (readAll.length === 0) { %>
+        <div class="row d-block text-center">
+            <img src="./giphy/giphy.gif" class="w-25 mt-4 shadow px-0">
+        </div>
+    <% } else { %>
+        <div class="row d-flex justify-content-center justify-content-lg-start">
+            <% readAll.forEach((read,i) => { i++ %>
+                <div class="col-8 col-sm-6 column d-flex justify-content-center pt-3 parent-card">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" class="img-fluid rounded-start">
+                            </div>
+                            <div class="col-md-8 text pe-4">
+                                <div class="card-body mt-1 ms-2">
+                                    <h5 class="card-title mb-1 name-card"><%= read.name %></h5>
+                                    <small class="text-muted" id="job-text"><%= read.job %></small>
+                                    <p class="card-text mt-3 profileTxt"><%= read.profile %></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sideBtn">
+                            <div class="box text-center">
+                                <span class="text-light"><%= i %></span>
+                            </div>
+                            <a href="/project/<%= read.name %>" class="box-detail bg-primary">
+                                <p class="text">DETAIL</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } %> 
+    <div class="float-popup" style="z-index: 999;">
+        <a href="/project/adding" class="btn btn-primary border border-2 border-primary rounded-pill px-5">
+            Create Resume
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var form = document.getElementById('search');
+    form.addEventListener('keyup', inputResult);
+
+    function inputResult() {
+        const inputValue = document.getElementById('search').value.toLowerCase();
+        const jobs = document.querySelectorAll('#job-text');
+        const parentCard = document.querySelectorAll('.parent-card');
+
+        parentCard.forEach(job => {
+            const childJob1 = job.childNodes[1];
+            const childJob2 = childJob1.childNodes[1];
+            const childJob3 = childJob2.childNodes[3];
+            const childJob4 = childJob3.childNodes[1];
+            const childJob5 = childJob4.childNodes[1];
+
+            const jobTxt = childJob5.textContent;
+            if (!jobTxt.toLowerCase().includes(inputValue.toLowerCase())) {
+                job.classList.add('d-none');
+            } else {
+                job.classList.remove('d-none');
+            }
+        });
+    }
+    
+</script>
+
+
+
+

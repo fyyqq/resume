@@ -1,0 +1,87 @@
+
+<div class="container-sm mt-5" id="adding">
+    <a href="/project/<%= read.name %>" class="btn btn-dark mb-4 px-3">
+        <i class="fa-solid fa-angle-left"></i>
+    </a>
+    <% if (typeof errors != 'undefined') { %> 
+        <div class="alert alert-danger mt-4" role="alert">
+            <% errors.forEach(err => { %>
+                <ul class="mb-0">
+                    <li class="text-muted"><%= err.msg %></li>
+                </ul>
+            <% }) %>
+        </div>
+    <% } %>
+    <div class="row px-5">
+        <form method="post" action="/project?_method=PUT" class="p-5 border border-3 border-secondary rounded-3" style="background-color: #fff;">
+            <input type="hidden" name="_id" value="<%= read._id %>">
+            <div class="border border-dark rounded col-2 rounded-circle" style="overflow: hidden; display: grid; place-items: center; height: 200px; width: 200px;">
+                <span id="displayProfileImg" class="w-100" name="img"></span>
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" class="img-fluid rounded-start">
+            </div>
+            <div class="mb-5 mt-3">
+                <input type="file" class="form-control" name="img" id="img">
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nickname :</label>
+                <input type="text" class="form-control" id="name" name="name" value="<%= read.name %>" required>
+            </div>
+            <div class="mb-3">
+                <% if (read.gender === read.gender) { %>
+                    <label class="form-label">Gender :</label><br>
+                    <input type="radio" id="man" name="gender" value="<%= read.gender %>" required checked>
+                    <label for="man">Male</label><br>
+                    <input type="radio" id="woman" name="gender" value="<%= read.gender %>" required>
+                    <label for="woman">Female</label>
+                    <% } else { %>
+                        <label class="form-label">Gender :</label><br>
+                        <input type="radio" id="man" name="gender" value="<%= read.gender %>" required>
+                        <label for="man">Male</label><br>
+                        <input type="radio" id="woman" name="gender" value="<%= read.gender %>" required checked>
+                        <label for="woman">Female</label>
+                <% } %> 
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address :</label>
+                <input type="email" class="form-control" id="email" name="email" value="<%= read.email %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="number" class="form-label">Number Phone :</label>
+                <input type="text" class="form-control" id="number" name="number" value="0<%= read.number %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="area" class="form-label">Area :</label>
+                <input type="text" class="form-control" id="area" name="area" value="<%= read.area %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="job" class="form-label">Jobs :</label>
+                <input type="text" class="form-control" id="job" name="job" value="<%= read.job %>" required>
+            </div>
+            <div class="mb-4">
+                <label for="profile" class="form-label">Profile :</label>
+                <textarea name="profile" id="profile" rows="5" class="form-control w-100" required><%= read.profile %></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="education" class="form-label">Education :</label>
+                <select name="education" id="education" class="py-2 ps-3 form-control" required>
+                    <option><%= read.education %></option>
+                    <option>None</option>
+                    <option>High School</option>
+                    <option>Diploma</option>
+                    <option>Degree</option>
+                    <option>Master</option>
+                    <option>PHD</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="skill" class="form-label">Skills :</label>
+                <input type="text" class="form-control" id="skill" name="skill" value="<%= read.skill %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="workExp" class="form-label">Year Work Experience :</label>
+                <input type="number" name="workExp" id="workExp" class="form-control" value="<%= read.workExp %>" required>
+            </div>
+            <button type="submit" class="btn btn-primary float-end mt-4 px-5">Update</button>
+        </form>
+    </div>
+</div>
